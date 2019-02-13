@@ -36,7 +36,12 @@ export default {
       ready: false
     }
   },
-  mounted () { const _this = this; setTimeout(function () { _this.ready = true }, 1000) },
+  mounted () {
+    setTimeout(function () {
+      this.ready = true
+      console.log(this.ready)
+    }, 1000)
+  },
   methods: {
     getAddressData: function (addressData, placeResultData, id) {
       console.log(addressData)
