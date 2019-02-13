@@ -37,11 +37,6 @@ export default {
       title: 'Users'
     }
   },
-  data () {
-    return {
-      ready: false
-    }
-  },
   methods: {
     getAddressData: function (addressData, placeResultData, id) {
       console.log(addressData)
