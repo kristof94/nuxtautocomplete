@@ -11,12 +11,21 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src:
+          'https://maps.googleapis.com/maps/api/js?key=AIzaSyAWmSTK_5vW944i8kUyotoFxJaTRlr61ns&libraries=places'
+      }
     ]
   },
   /*
   ** Global CSS
   */
   css: ['~/assets/css/main.css'],
+  plugins: [
+    { src: '~/plugins/googleAutocomplete', ssr: false }
+  ],
   /*
   ** Add axios globally
   */
