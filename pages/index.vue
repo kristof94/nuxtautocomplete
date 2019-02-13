@@ -38,10 +38,16 @@ export default {
   },
   mounted () {
     const _this = this
-    setTimeout(function () {
-      _this.ready = true
-      console.log(_this.ready)
-    }, 1000)
+    let promiseA = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        _this.ready = true
+        console.log(_this.ready)
+        resolve('Promise A win!')
+      }, 500)
+    })
+    promiseA.then(() => {
+      console.log('ok')
+    })
   },
   methods: {
     getAddressData: function (addressData, placeResultData, id) {
