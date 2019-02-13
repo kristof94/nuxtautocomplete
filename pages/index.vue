@@ -2,6 +2,7 @@
 	<section class="container">
 		<img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo">
 		<h1 class="title">test autocomplete
+      <no-ssr>
 			<vue-google-autocomplete
 				v-if="ready"
 				id="map"
@@ -9,6 +10,7 @@
 				placeholder="Start typing"
 				v-on:placechanged="getAddressData"
 			></vue-google-autocomplete>
+      </no-ssr>
 		</h1>
 		<ul class="users">
 			<li v-for="(user, index) in users" :key="index" class="user">
@@ -24,7 +26,7 @@ import axios from '~/plugins/axios'
 export default {
   async asyncData () {
     let { data } = await axios.get('/api/users')
-    return { users: data }
+    return { users: data, ready: true }
   },
   head () {
     return {
@@ -35,19 +37,6 @@ export default {
     return {
       ready: false
     }
-  },
-  mounted () {
-    const _this = this
-    let promiseA = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        _this.ready = true
-        console.log(_this.ready)
-        resolve('Promise A win!')
-      }, 500)
-    })
-    promiseA.then(() => {
-      console.log('ok')
-    })
   },
   methods: {
     getAddressData: function (addressData, placeResultData, id) {
