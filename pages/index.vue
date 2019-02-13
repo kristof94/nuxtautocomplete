@@ -25,9 +25,9 @@
 import axios from '~/plugins/axios'
 
 export default {
-  async asyncData () {
+  asyncData () {
     return axios.get('/api/users').then((data) => {
-      return { users: data, ready: true }
+      return { users: data.data, ready: true }
     }).catch((err) => {
       console.log(err)
     })

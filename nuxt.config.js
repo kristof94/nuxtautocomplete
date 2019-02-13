@@ -4,6 +4,7 @@ module.exports = {
   */
   head: {
     title: 'starter',
+    mode: 'universal',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
