@@ -26,6 +26,9 @@ module.exports = {
   plugins: [
     { src: '~/plugins/googleAutocomplete', ssr: false }
   ],
+  modules: [
+    'bootstrap-vue/nuxt'
+  ],
   /*
   ** Add axios globally
   */
