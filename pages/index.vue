@@ -13,28 +13,29 @@
 			></vue-google-autocomplete>
       </no-ssr>
 		</h1>
-		<ul class="users">
-			<li v-for="(user, index) in users" :key="index" class="user">
-				<nuxt-link :to="{ name: 'id', params: { id: index }}">{{ user.name }}</nuxt-link>
-			</li>
-		</ul>
 	</section>
 </template>
 
 <script>
-import axios from '~/plugins/axios'
 
 export default {
-  asyncData () {
-    return axios.get('/api/users').then((data) => {
-      return { users: data.data, ready: true }
-    }).catch((err) => {
-      console.log(err)
+  mounted () {
+    const _this = this
+    var promise1 = Promise.resolve(123)
+
+    promise1.then(function (value) {
+      console.log(value)
+      _this.ready = true
     })
   },
   head () {
     return {
       title: 'Users'
+    }
+  },
+  data () {
+    return {
+      ready: false
     }
   },
   methods: {
