@@ -14,7 +14,6 @@ export default {
   mounted () {
     const _this = this
     _this.ready = true
-    console.log(this.ready)
   },
   head () {
     return {

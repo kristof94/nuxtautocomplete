@@ -24,9 +24,9 @@ module.exports = {
   ** Global CSS
   */
   css: ['~/assets/css/main.css'],
-  plugins: [
+  /*plugins: [
     { src: '~/plugins/googleAutocomplete', ssr: false }
-  ],
+  ], */
   modules: [
     'bootstrap-vue/nuxt'
   ],
