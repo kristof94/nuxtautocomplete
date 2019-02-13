@@ -21,12 +21,14 @@
 export default {
   mounted () {
     const _this = this
+    _this.ready = true
+    /*
     var promise1 = Promise.resolve(123)
 
     promise1.then(function (value) {
       console.log(value)
       _this.ready = true
-    })
+    }) */
   },
   head () {
     return {
