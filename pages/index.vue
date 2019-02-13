@@ -2,6 +2,7 @@
 	<section class="container">
 		<img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo">
 		<h1 class="title">test autocomplete
+      {{ ready }}
       <no-ssr>
 			<vue-google-autocomplete
 				v-if="ready"
@@ -25,8 +26,11 @@ import axios from '~/plugins/axios'
 
 export default {
   async asyncData () {
-    let { data } = await axios.get('/api/users')
-    return { users: data, ready: true }
+    return axios.get('/api/users').then((data) => {
+      return { users: data, ready: true }
+    }).catch((err) => {
+      console.log(err)
+    })
   },
   head () {
     return {
