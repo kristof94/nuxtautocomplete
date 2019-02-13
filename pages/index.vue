@@ -37,9 +37,10 @@ export default {
     }
   },
   mounted () {
+    const _this = this
     setTimeout(function () {
-      this.ready = true
-      console.log(this.ready)
+      _this.ready = true
+      console.log(_this.ready)
     }, 1000)
   },
   methods: {
