@@ -3,6 +3,7 @@
 		<img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo">
 		<h1 class="title">test autocomplete
 			<vue-google-autocomplete
+				v-if="ready"
 				id="map"
 				class="form-control"
 				placeholder="Start typing"
@@ -30,6 +31,12 @@ export default {
       title: 'Users'
     }
   },
+  data () {
+    return {
+      ready: false
+    }
+  },
+  mounted () { const _this = this; setTimeout(function () { _this.ready = true }, 1000) },
   methods: {
     getAddressData: function (addressData, placeResultData, id) {
       console.log(addressData)
